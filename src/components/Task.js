@@ -8,7 +8,7 @@ export const Task = ({
 }) => {
   return (
     <div className={`list-item ${state}`}>
-      <label className="checkbox">
+      <label className="checkbox" style={{ background: "red" }}>
         <input
           type="checkbox"
           defaultChecked={state === "TASK_ARCHIVED"}
@@ -23,10 +23,15 @@ export const Task = ({
           value={title}
           readOnly={true}
           placeholder="Input title"
+          style={{ background: "red" }}
         />
       </div>
 
-      <div className="actions" onClick={(event) => event.stopPropagation()}>
+      <div
+        className="actions"
+        onClick={(event) => event.stopPropagation()}
+        style={{ background: "red" }}
+      >
         {state !== "TASK_ARCHIVED" && (
           // eslint-disable-next-line jsx-a11y/anchor-is-valid
           <a onClick={() => onPinTask(id)}>
